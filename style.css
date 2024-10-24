@@ -13,6 +13,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
     padding: 60px;
     background-color: #e6f2ff;
     animation: fadeIn 1.5s ease-in-out; /* Intro animation */
@@ -20,9 +21,9 @@ body {
 
 .profile-pic img {
     border-radius: 50%;
-    width: 220px;
-    height: 220px;
-    margin-left: 70%;
+    width: 270px;
+    height: 270px;
+    margin-left: 80%;
     object-fit: cover;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     transform: scale(0.9);
@@ -35,10 +36,10 @@ body {
 
 .intro-text {
     max-width: 500px;
-    transform: translateX(-50px);
-    margin-right: 10%;
+    margin-right: 15%;
     opacity: 0;
     animation: slideIn 1.5s forwards 0.5s;
+    text-align: center; /* Center the text on smaller screens */
 }
 
 .intro-text h1 {
@@ -55,6 +56,7 @@ body {
 .social-icons {
     margin-top: 30px;
     animation: fadeInUp 2s forwards;
+    text-align: center; /* Center social icons on smaller screens */
 }
 
 .social-icons a {
@@ -69,6 +71,70 @@ body {
     transform: scale(1.2);
 }
 
+/* Responsive Design */
+
+/* Large screens (desktops and larger tablets) */
+@media (max-width: 1200px) {
+    .header-section {
+        padding: 40px;
+        justify-content: center; /* Center content */
+    }
+
+    .intro-text {
+        text-align: center;
+        margin-right: 0;
+        margin-top: 20px;
+        transform: none;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+    .header-section {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .profile-pic img {
+        width: 180px;
+        height: 180px;
+        margin-left: 5%;
+    }
+
+    .intro-text {
+        margin-top: 20px;
+        font-size: 1.2rem;
+    }
+
+    .social-icons a {
+        font-size: 1.5rem;
+        margin-right: 15px;
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 576px) {
+    .header-section {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .intro-text h1 {
+        font-size: 2rem;
+    }
+
+    .profile-pic img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .social-icons a {
+        font-size: 1.2rem;
+        margin-right: 10px;
+    }
+}
+
+
 /* Projects Section */
 .projects-section {
     padding: 80px 20px;
@@ -79,8 +145,8 @@ body {
 }
 
 .projects-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 60px;
+    font-size: 2rem;
+    margin-bottom: 30px;
     color: #333;
     position: relative;
     display: inline-block;
@@ -123,7 +189,7 @@ body {
 }
 
 .project-item h3 {
-    font-size: 1.6rem;
+    font-size: 1rem;
     color: #333;
     margin-bottom: 10px;
     transition: color 0.3s ease;
@@ -231,7 +297,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
+    gap: 100px;
     
 }
 

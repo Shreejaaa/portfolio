@@ -1,0 +1,292 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f7;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Header Section */
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    background-color: #e6f2ff;
+    animation: fadeIn 1.5s ease-in-out; /* Intro animation */
+}
+
+.profile-pic img {
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    margin-left: 70%;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.4s ease;
+}
+
+.profile-pic img:hover {
+    transform: scale(1); /* Zoom effect on hover */
+}
+
+.intro-text {
+    max-width: 500px;
+    transform: translateX(-50px);
+    margin-right: 10%;
+    opacity: 0;
+    animation: slideIn 1.5s forwards 0.5s;
+}
+
+.intro-text h1 {
+    font-size: 2.8rem;
+    color: #333;
+}
+
+.highlight {
+    color: #ff6347;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons {
+    margin-top: 30px;
+    animation: fadeInUp 2s forwards;
+}
+
+.social-icons a {
+    margin-right: 20px;
+    font-size: 1.8rem;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff6347;
+    transform: scale(1.2);
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    position: relative; /* Ensure it's positioned relative for z-index stacking context */
+}
+
+.projects-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    z-index: 2; /* Make sure it's above the modal background */
+}
+
+.projects-section h2::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background-color: #ff6347; /* Tomato color */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Ensure it's above everything else */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.project-item {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Ensure project items are above the modal background */
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-item h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+    position: relative; /* Required for the overlay effect */
+    z-index: 2; /* Bring title above the gradient */
+}
+
+.project-item:hover h3 {
+    color: #ff6347; /* Change title color on hover */
+}
+
+.project-item::before {
+    content: "";
+    background: linear-gradient(45deg, #ff6347, #333); /* Gradient background */
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: 0;
+    left: -120%;
+    transition: all 0.5s ease;
+    z-index: 1; /* Below the project title but above the item */
+    opacity: 0.1; /* Slightly visible background */
+    transform: rotate(5deg);
+}
+
+.project-item:hover::before {
+    left: 0; /* Slide the gradient in on hover */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* High z-index to ensure it's on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px; /* Rounded corners */
+    width: 80%; /* Could be more or less, depending on screen size */
+    transition: transform 0.3s; /* Smooth modal entrance */
+    transform: translateY(-20px); /* Start slightly above */
+    z-index: 1001; /* Ensure modal content is on top of modal background */
+}
+
+.modal-content.show {
+    transform: translateY(0); /* Move into place */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* Skills Section */
+.skills-section {
+    padding: 70px 20px;
+    background-color: #f4f9ff;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.skills-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 80px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+   
+}
+
+.skills-section h2::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background-color: #ff6347;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    
+}
+
+.skill-item {
+    font-size: 3rem;
+    color: #333;
+    transition: color 0.3s ease, transform 0.4s ease;
+}
+
+.skill-item:hover {
+    color: #ff6347;
+    transform: scale(1.2);
+}
+
+.skill-item i {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

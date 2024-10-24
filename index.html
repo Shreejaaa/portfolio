@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreeja Neupane | Portfolio</title>
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with Image and Intro -->
+    <header class="header-section">
+        <div class="profile-pic">
+            <img src="assets/profile.jpg" alt="Shreeja Neupane's Profile">
+        </div>
+        <div class="intro-text">
+            <h1>Hello, I'm <span class="highlight">Shreeja Neupane</span></h1>
+            <p>Computer Science student passionate about business analysis, project management, and PHP development.</p>
+            <p>Chapagaon, Lalitpur</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/shreeja-neupane-b3053b240/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-item" onclick="openModal('ecommerceModal')">
+                <h3>E-commerce Website</h3>
+            </div>
+            <div class="project-item" onclick="openModal('smartIrrigationModal')">
+                <h3>Smart Irrigation E-commerce Website</h3>
+            </div>
+            <div class="project-item" onclick="openModal('weatherModal')">
+                <h3>Weather Forecasting</h3>
+            </div>
+            <div class="project-item" onclick="openModal('bankingModal')">
+                <h3>Banking Website</h3>
+            </div>
+            <div class="project-item" onclick="openModal('bakeryModal')">
+                <h3>Bakery Shop Website</h3>
+            </div>
+            <div class="project-item" onclick="openModal('frontendDesignModal')">
+                <h3>Figma Design</h3>
+            </div>
+            <div class="project-item" onclick="openModal('bankingSystemModal')">
+                <h3>Banking System</h3>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modals for Project Details -->
+    <div id="ecommerceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ecommerceModal')">&times;</span>
+            <h3>E-commerce Website</h3>
+            <p>Fully functional e-commerce website built with HTML, CSS, JavaScript, Bootstrap, PHP, Oracle Database, and PayPal integration.</p>
+        </div>
+    </div>
+    
+    <div id="smartIrrigationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('smartIrrigationModal')">&times;</span>
+            <h3>Smart Irrigation E-commerce Website</h3>
+            <p>Fully functional smart irrigation e-commerce website developed using HTML, CSS, JavaScript, PHP, SQL Database, and API integration.</p>
+        </div>
+    </div>
+    
+    <div id="weatherModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('weatherModal')">&times;</span>
+            <h3>Weather Forecasting</h3>
+            <p>Implemented weather forecasting using API integration.</p>
+        </div>
+    </div>
+    
+    <div id="bankingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bankingModal')">&times;</span>
+            <h3>Banking Website</h3>
+            <p>Simple banking website created with HTML, CSS, and JavaScript.</p>
+        </div>
+    </div>
+    
+    <div id="bakeryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bakeryModal')">&times;</span>
+            <h3>Bakery Shop Website</h3>
+            <p>Bakery shop website using HTML, CSS, and PHP for order management.</p>
+        </div>
+    </div>
+    
+    <div id="frontendDesignModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('frontendDesignModal')">&times;</span>
+            <h3>Figma Design</h3>
+            <p>Designed the front-end using Figma, ensuring a user-friendly and visually appealing interface.</p>
+        </div>
+    </div>
+    
+    <div id="bankingSystemModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bankingSystemModal')">&times;</span>
+            <h3>Banking System</h3>
+            <p>Developed a banking system using C and C++.</p>
+        </div>
+    </div>
+    
+    
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <h2>Skills</h2>
+        <div class="skills-icons">
+            <div class="skill-item"><i class="fab fa-html5"></i> </div>
+            <div class="skill-item"><i class="fab fa-css3-alt"></i> </div>
+            <div class="skill-item"><i class="fab fa-js"></i> </div>
+            <div class="skill-item"><i class="fab fa-php"></i> </div>
+            <div class="skill-item"><i class="fab fa-python"></i></div>
+            <div class="skill-item"><i class="fab fa-linux"></i></div>
+            <div class="skill-item"><i class="fab fa-git"></i> </div>
+            <div class="skill-item"><i class="fas fa-database"></i> </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Shreeja Neupane | All rights reserved.</p>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
